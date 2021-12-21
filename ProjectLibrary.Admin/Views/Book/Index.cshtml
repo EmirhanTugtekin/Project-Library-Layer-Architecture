@@ -1,0 +1,54 @@
+﻿@model System.Collections.Generic.IEnumerable<ProjectLibrary.Data.Book>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Index", "Book", FormMethod.Get))
+{
+    <div style="margin-top:15px; margin-bottom:15px;">
+        <b>Aranacak kitabı giriniz: &nbsp</b>@Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </div>
+}
+
+<table class="table table-striped" >
+    <tr>
+        <th>ID</th>
+        <th>KİTAP ADI</th>
+        <th>YAYIN YILI</th>
+        <th>YAYINCI</th>
+        <th>DURUM</th>
+        <th>DİL</th>
+        <th>KATEGORİ</th>
+        <th>YAZAR</th>
+        <th>KAT/BÖLÜM</th>
+        <th>GÜNCELLE</th>
+        <th>SİL</th>
+    </tr>
+
+    @foreach (var k in Model)
+{
+
+        <tr>
+            <td>@k.BookID</td>
+            <td> @k.BookName</td>
+            <td>@k.PublishYear</td>
+            <td>@k.Publisher</td>
+            <td>@k.Available</td>
+            <td>@k.Language</td>
+            <td>@k.Author.AuthorName @k.Author.AuthorSurname</td>
+            <td>@k.Category.CategoryName</td>
+            <td>@k.Location.floor @k.Location.section</td>
+            <td>@Html.ActionLink("Düzenle", "Edit", new { id = k.BookID }) </td>
+            <td>@Html.ActionLink("Sil", "Delete", new { id = k.BookID })  </td>
+        </tr>
+        }
+   
+</table>
+
+
+<a href="/Book/Create" class="btn btn-primary">Kitap ekle</a>
+<br />
+

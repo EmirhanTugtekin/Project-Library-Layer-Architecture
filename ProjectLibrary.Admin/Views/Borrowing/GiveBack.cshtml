@@ -1,0 +1,39 @@
+﻿@model ProjectLibrary.Data.Borrowing
+@{
+    ViewBag.Title = "GiveBack";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("UpgradeBorrow", "Borrowing", FormMethod.Post))
+{
+<div class="form-group">
+    <label>İşlem ID</label>
+    @Html.TextBoxFor(k => k.BorrowingID, new { @class = "form-control" })
+    <br />
+    <label>Kitap</label>
+    @Html.TextBoxFor(k => k.Book.BookName, new { @class = "form-control" })
+    <br />
+    <label>Üye</label>
+    @Html.TextBoxFor(k => k.Member.MemberName, new { @class = "form-control" })
+    <br />
+    <label>Personel</label>
+    @Html.TextBoxFor(k => k.Stuff.StuffName, new { @class = "form-control" })
+    <br />
+    <label>Alış Tarihi</label>
+    @Html.TextBoxFor(k => k.DateOfBorrowed, new { @class = "form-control" })
+    <br />
+    <label>Normal İade Tarihi</label>
+    @Html.TextBoxFor(k => k.DateOfReturn, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.ActualDateOfReturn, "Üyenin Geri Getirdiği Tarih:")
+    <input type="text" class="form-control" name="ActualDateOfReturn" value="@DateTime.Now.ToShortDateString()" />
+    <br />
+    <label>Geç Gelen Gün Sayısı</label>
+    <input type="text" class="form-control" id="Late" value="@ViewBag.dgr" />
+    
+</div>
+    <div>
+        <button class="btn btn-group" style="background-color:aquamarine" >Ödünç Kitabı Geri Al</button>
+    </div>
+}
+

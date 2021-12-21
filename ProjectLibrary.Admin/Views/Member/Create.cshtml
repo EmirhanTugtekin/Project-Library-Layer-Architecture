@@ -1,0 +1,55 @@
+﻿@model ProjectLibrary.Data.Member
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts2/jquery-3.3.1.js"></script>
+
+
+<br />
+<h2>Yeni ÜYE Ekle</h2>
+<br />
+<form class="form-group" method="post">
+
+    @Html.LabelFor(x => x.MemberName, "ÜYE Adı:")
+    @Html.TextBoxFor(x => x.MemberName, new { @class = "form-control" })
+
+    @Html.LabelFor(x => x.MemberSurname, "ÜYE Soyadı:")
+    @Html.TextBoxFor(x => x.MemberSurname, new { @class = "form-control" })
+
+    @Html.LabelFor(x => x.NickName, "Kullanıcı Adı:")
+    @Html.TextBoxFor(x => x.NickName, new { @class = "form-control" })
+
+    @Html.LabelFor(x => x.Password, "Şifre:")
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+
+    @Html.LabelFor(x => x.Email, "EPosta:")
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+
+    @Html.LabelFor(x => x.DateOfMembership, "Üye Olma Tarihi:")
+    @Html.TextBoxFor(x => x.DateOfMembership, new { @class = "form-control" })
+
+    @Html.LabelFor(x => x.DateOfBirth, "Doğum Tarihi:")
+    @Html.TextBoxFor(x => x.DateOfBirth, new { @class = "form-control" })
+
+    @Html.LabelFor(x => x.Photo, "Fotoğraf:")
+    @Html.TextBoxFor(x => x.Photo, new { @class = "form-control" })
+
+
+    <br />
+    <button class="btn btn-info" id="Btn1">KAYDET</button>
+
+
+
+
+    <script>
+        $('#Btn1').click(function () {
+            alert("ÜYE başarılı bir şekilde eklendi")
+        });
+
+
+    </script>
+</form>
+
+<a href="/Member/Index">ÜYE Listesine Geri Dön</a>

@@ -1,0 +1,10 @@
+﻿@model ProjectLibrary.Data.Stuff
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<td><label>NickName: @HttpContext.Current.User.Identity.Name</label></td>
+<br />
+@Html.TextBoxFor(x => x.StuffName, new { @class = "form-control" })
+<br />
+@Html.TextBoxFor(x => x.StuffSurname, new { @class = "form-control" })

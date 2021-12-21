@@ -1,0 +1,24 @@
+﻿@model ProjectLibrary.Data.Category
+
+
+<script src="~/Scripts2/jquery-3.3.1.js"></script>
+<h3>
+    Bu kategoriyi silmek istiyor musunuz? = @Html.DisplayFor(model => model.CategoryName) ?
+</h3>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        <input id="Btn1" type="submit" value="Sil" class="btn btn-danger" /> 
+        <a href="/Category/Index" class="btn btn-info">Kategori Listesine Geri Dön</a>
+    </div>
+
+}
+    <script>
+        $('#Btn1').click(function () {
+            alert("Kategori başarılı bir şekilde silindi")
+        });
+    </script>

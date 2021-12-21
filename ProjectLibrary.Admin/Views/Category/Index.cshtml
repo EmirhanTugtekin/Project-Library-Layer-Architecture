@@ -1,0 +1,39 @@
+﻿@model System.Collections.Generic.IEnumerable<ProjectLibrary.Data.Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<table class="table table-striped" >
+    <tr>
+        <th>ID</th>
+        <th>KATEGORİ ADI</th>
+        <th>GÜNCELLE</th>
+        <th>SİL</th>
+    </tr>
+
+    @foreach (var k in Model)
+    {
+
+    <tr>
+        <td>
+            @k.CategoryID
+        </td>
+        <td>
+            @k.CategoryName
+        </td>
+        <td>@Html.ActionLink("Düzenle", "Edit", new { id = k.CategoryID }) </td>
+        <td>@Html.ActionLink("Sil", "Delete", new { id = k.CategoryID })  </td>
+        
+    </tr>
+    }
+    @*Bir döngü oluşturdum. Bu döngü k isminde bir değişken içeriyor. Bu k modele bağlı. Model ise kategoriye bağlı. Kategori ise
+        KategoriController tarafındaki metoda bağlı.*@
+</table>
+
+
+<a href="/Category/Create" class="btn btn-primary">Kategori ekle</a>
+<br />
+

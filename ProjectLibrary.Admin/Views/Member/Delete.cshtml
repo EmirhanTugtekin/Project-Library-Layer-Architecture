@@ -1,0 +1,24 @@
+﻿@model ProjectLibrary.Data.Member
+
+
+<script src="~/Scripts2/jquery-3.3.1.js"></script>
+<h3>
+    Bu üyeyi silmek istiyor musunuz? = @Html.DisplayFor(model => model.MemberName) ?
+</h3>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        <input id="Btn1" type="submit" value="Sil" class="btn btn-danger" />
+        <a href="/Member/Index" class="btn btn-info">Üye Listesine Geri Dön</a>
+    </div>
+
+}
+<script>
+        $('#Btn1').click(function () {
+            alert("Üye başarılı bir şekilde silindi")
+        });
+</script>

@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8E904841-671C-4C4C-84F8-989EAFAA5668}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjectLibrary.Data</RootNamespace>
+    <AssemblyName>ProjectLibrary.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataContext\ProjectLibraryContext.cs" />
+    <Compile Include="Migrations\202106281850194_InitialCreate.cs" />
+    <Compile Include="Migrations\202106281850194_InitialCreate.designer.cs">
+      <DependentUpon>202106281850194_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106290032551_ImageUpdate.cs" />
+    <Compile Include="Migrations\202106290032551_ImageUpdate.designer.cs">
+      <DependentUpon>202106290032551_ImageUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106290036404_locationTableUpdate.cs" />
+    <Compile Include="Migrations\202106290036404_locationTableUpdate.designer.cs">
+      <DependentUpon>202106290036404_locationTableUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106290037543_locationTableUpdate2.cs" />
+    <Compile Include="Migrations\202106290037543_locationTableUpdate2.designer.cs">
+      <DependentUpon>202106290037543_locationTableUpdate2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106290040195_bookUpdate.cs" />
+    <Compile Include="Migrations\202106290040195_bookUpdate.designer.cs">
+      <DependentUpon>202106290040195_bookUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106290117025_categoryRequired.cs" />
+    <Compile Include="Migrations\202106290117025_categoryRequired.designer.cs">
+      <DependentUpon>202106290117025_categoryRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106290119282_categoryRequiredCancel.cs" />
+    <Compile Include="Migrations\202106290119282_categoryRequiredCancel.designer.cs">
+      <DependentUpon>202106290119282_categoryRequiredCancel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106291742557_stuffAndMemberUpgrade.cs" />
+    <Compile Include="Migrations\202106291742557_stuffAndMemberUpgrade.designer.cs">
+      <DependentUpon>202106291742557_stuffAndMemberUpgrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106291744163_stuffAndMemberUpgrade2.cs" />
+    <Compile Include="Migrations\202106291744163_stuffAndMemberUpgrade2.designer.cs">
+      <DependentUpon>202106291744163_stuffAndMemberUpgrade2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106291800363_stuffAndMemberUpgrade3.cs" />
+    <Compile Include="Migrations\202106291800363_stuffAndMemberUpgrade3.designer.cs">
+      <DependentUpon>202106291800363_stuffAndMemberUpgrade3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106292010349_borrowingUpdate.cs" />
+    <Compile Include="Migrations\202106292010349_borrowingUpdate.designer.cs">
+      <DependentUpon>202106292010349_borrowingUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106292012452_borrowingUpdate2.cs" />
+    <Compile Include="Migrations\202106292012452_borrowingUpdate2.designer.cs">
+      <DependentUpon>202106292012452_borrowingUpdate2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106292257558_bookUpdate1.cs" />
+    <Compile Include="Migrations\202106292257558_bookUpdate1.designer.cs">
+      <DependentUpon>202106292257558_bookUpdate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106292342107_borrowingUpdate3.cs" />
+    <Compile Include="Migrations\202106292342107_borrowingUpdate3.designer.cs">
+      <DependentUpon>202106292342107_borrowingUpdate3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106292344414_borrowingUpdate4.cs" />
+    <Compile Include="Migrations\202106292344414_borrowingUpdate4.designer.cs">
+      <DependentUpon>202106292344414_borrowingUpdate4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106300305100_borrowingUpdate5.cs" />
+    <Compile Include="Migrations\202106300305100_borrowingUpdate5.designer.cs">
+      <DependentUpon>202106300305100_borrowingUpdate5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106300320499_fineUpdate.cs" />
+    <Compile Include="Migrations\202106300320499_fineUpdate.designer.cs">
+      <DependentUpon>202106300320499_fineUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Author.cs" />
+    <Compile Include="Model\Book.cs" />
+    <Compile Include="Model\Borrowing.cs" />
+    <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\Comment.cs" />
+    <Compile Include="Model\Fine.cs" />
+    <Compile Include="Model\LibrarySituation.cs" />
+    <Compile Include="Model\Location.cs" />
+    <Compile Include="Model\Member.cs" />
+    <Compile Include="Model\Stuff.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202106281850194_InitialCreate.resx">
+      <DependentUpon>202106281850194_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106290032551_ImageUpdate.resx">
+      <DependentUpon>202106290032551_ImageUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106290036404_locationTableUpdate.resx">
+      <DependentUpon>202106290036404_locationTableUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106290037543_locationTableUpdate2.resx">
+      <DependentUpon>202106290037543_locationTableUpdate2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106290040195_bookUpdate.resx">
+      <DependentUpon>202106290040195_bookUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106290117025_categoryRequired.resx">
+      <DependentUpon>202106290117025_categoryRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106290119282_categoryRequiredCancel.resx">
+      <DependentUpon>202106290119282_categoryRequiredCancel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106291742557_stuffAndMemberUpgrade.resx">
+      <DependentUpon>202106291742557_stuffAndMemberUpgrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106291744163_stuffAndMemberUpgrade2.resx">
+      <DependentUpon>202106291744163_stuffAndMemberUpgrade2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106291800363_stuffAndMemberUpgrade3.resx">
+      <DependentUpon>202106291800363_stuffAndMemberUpgrade3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106292010349_borrowingUpdate.resx">
+      <DependentUpon>202106292010349_borrowingUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106292012452_borrowingUpdate2.resx">
+      <DependentUpon>202106292012452_borrowingUpdate2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106292257558_bookUpdate1.resx">
+      <DependentUpon>202106292257558_bookUpdate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106292342107_borrowingUpdate3.resx">
+      <DependentUpon>202106292342107_borrowingUpdate3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106292344414_borrowingUpdate4.resx">
+      <DependentUpon>202106292344414_borrowingUpdate4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106300305100_borrowingUpdate5.resx">
+      <DependentUpon>202106300305100_borrowingUpdate5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106300320499_fineUpdate.resx">
+      <DependentUpon>202106300320499_fineUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

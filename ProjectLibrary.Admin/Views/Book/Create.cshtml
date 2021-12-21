@@ -1,0 +1,54 @@
+﻿@model ProjectLibrary.Data.Book
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts2/jquery-3.3.1.js"></script>
+<br />
+<h2>Yeni Kitap Ekle</h2>
+<br />
+<form class="form-group" method="post">
+
+    @Html.LabelFor(x => x.BookName, "Kitap Adı:")
+    @Html.TextBoxFor(x => x.BookName, new { @class = "form-control" })
+
+    @Html.LabelFor(x => x.PublishYear, "Yayın yılı:")
+    @Html.TextBoxFor(x => x.PublishYear, new { @class = "form-control" })
+
+    @Html.LabelFor(x => x.Publisher, "Yayıncı:")
+    @Html.TextBoxFor(x => x.Publisher, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Available, "Durum:")
+    @Html.DropDownListFor(x => x.Available, new[] { new SelectListItem { Text = "True", Value = "1" }, new SelectListItem { Text = "False", Value = "0" } })
+    <br />
+    @Html.LabelFor(x => x.Language, "Dil:")
+    @Html.TextBoxFor(x => x.Language, new { @class = "form-control" })
+
+    @Html.LabelFor(x => x.CategoryID, "Kategori:")
+    @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+
+    @Html.LabelFor(x => x.AuthorID, "Yazar:")
+    @Html.DropDownListFor(x => x.AuthorID, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+
+    @Html.LabelFor(x => x.LocationID, "Kat/Bölüm:")
+    @Html.DropDownListFor(x => x.LocationID, (List<SelectListItem>)ViewBag.dgr3, new { @class = "form-control" })
+
+    @Html.LabelFor(x => x.Image, "Fotoğraf:")
+    @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
+
+
+    <br />
+    <button class="btn btn-info" id="Btn1">KAYDET</button>
+
+
+
+    <script>
+        $('#Btn1').click(function () {
+            alert("Kitap başarılı bir şekilde eklendi")
+        });
+    </script>
+</form>
+
+<a href="/Book/Index">Kitap Listesine Geri Dön</a>

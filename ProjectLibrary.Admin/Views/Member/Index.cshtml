@@ -1,0 +1,55 @@
+﻿@model System.Collections.Generic.IEnumerable<ProjectLibrary.Data.Member>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Index", "Member", FormMethod.Get))
+{
+    <div style="margin-top:15px; margin-bottom:15px;">
+        <b>Aranacak kitabı giriniz: &nbsp</b>@Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </div>
+}
+
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>ÜYE ADI</th>
+        <th>ÜYE SOYADI</th>
+        <th>KULLANICI ADI</th>
+        <th>ŞİFRE</th>
+        <th>EMAIL</th>
+        <th>ÜYE OLDUĞU TARİH</th>
+        <th>DOĞUM TARİHİ</th>
+        <th>FOTOĞRAF</th>
+        <th>GÜNCELLE</th>
+        <th>SİL</th>
+    </tr>
+
+    @foreach (var k in Model)
+    {
+
+        <tr>
+            <td>@k.MemberID</td>
+            <td>@k.MemberName</td>
+            <td>@k.MemberSurname</td>
+            <td>@k.NickName</td>
+            <td>@k.Password</td>
+            <td>@k.Email</td>
+            <td>@k.DateOfMembership</td>
+            <td>@k.DateOfBirth</td>
+            <td>@k.Photo</td>
+            <td>@Html.ActionLink("Düzenle", "Edit", new { id = k.MemberID }) </td>
+            <td>@Html.ActionLink("Sil", "Delete", new { id = k.MemberID })  </td>
+
+        </tr>
+    }
+
+</table>
+
+
+<a href="/Member/Create" class="btn btn-primary">Üye ekle</a>
+<br />
+

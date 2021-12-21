@@ -1,0 +1,39 @@
+﻿@using ProjectLibrary.Data
+@model List<Borrowing>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-striped">
+    <tr>
+        <th>İŞLEM ID</th>
+        <th>KİTAP ADI</th>
+        <th>ÜYE ADI</th>
+        <th>PERSONEL ADI</th>
+        <th>ALINDIĞI TARİH</th>
+        <th>İADE TARİHİ</th>
+        <th>İADE ET</th>
+
+    </tr>
+
+    @foreach (var k in Model)
+    {
+
+        <tr>
+            <td>@k.BorrowingID</td>
+            <td>@k.Book.BookName</td>
+            <td>@k.Member.MemberName @k.Member.MemberSurname</td>
+            <td>@k.Stuff.StuffName @k.Stuff.StuffSurname</td>
+            <td>@k.DateOfBorrowed</td>
+            <td>@k.DateOfReturn</td>
+            
+            <td>@Html.ActionLink("Kitabı iade et", "GiveBack", new { id = k.BorrowingID }) </td>
+        </tr>
+    }
+    @*Bir döngü oluşturdum. Bu döngü k isminde bir değişken içeriyor. Bu k modele bağlı. Model ise kategoriye bağlı. Kategori ise
+        KategoriController tarafındaki metoda bağlı.*@
+</table>
+
+<br />
+

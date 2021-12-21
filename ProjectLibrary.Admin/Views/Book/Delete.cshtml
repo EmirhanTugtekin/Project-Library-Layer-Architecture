@@ -1,0 +1,24 @@
+﻿@model ProjectLibrary.Data.Book
+
+
+<script src="~/Scripts2/jquery-3.3.1.js"></script>
+<h3>
+    Bu Kitabı silmek istiyor musunuz? = @Html.DisplayFor(model => model.BookName) ?
+</h3>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        <input id="Btn1" type="submit" value="Sil" class="btn btn-danger" />
+        <a href="/Book/Index" class="btn btn-info">Kitap Listesine Geri Dön</a>
+    </div>
+
+}
+<script>
+        $('#Btn1').click(function () {
+            alert("Kitap başarılı bir şekilde silindi")
+        });
+</script>

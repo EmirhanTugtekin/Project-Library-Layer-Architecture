@@ -1,0 +1,65 @@
+﻿@model ProjectLibrary.Data.Member
+
+@{
+    ViewBag.Title = "Kategori Düzenleme";
+}
+
+<h2>Kitap Düzenleme</h2>
+<script src="~/Scripts2/jquery-3.3.1.js"></script>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.MemberID)
+        <div class="form-group">
+
+            @Html.ValidationMessageFor(model => model.MemberName, "Üye Adı:", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.MemberName, new { htmlAttributes = new { @class = "form-control" } })
+
+            @Html.ValidationMessageFor(model => model.MemberSurname, "Üye Soyadı:", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.MemberSurname, new { htmlAttributes = new { @class = "form-control" } })
+
+            @Html.ValidationMessageFor(model => model.NickName, "Kullanıcı Adı:", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.NickName, new { htmlAttributes = new { @class = "form-control" } })
+
+            @Html.ValidationMessageFor(model => model.Password, "Şifre:", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+
+            @Html.ValidationMessageFor(model => model.Email, "EPosta:", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+
+            @Html.ValidationMessageFor(model => model.DateOfMembership, "Üye Olma Tarihi:", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.DateOfMembership, new { htmlAttributes = new { @class = "form-control" } })
+
+            @Html.ValidationMessageFor(model => model.DateOfBirth, "Doğum Tarihi:", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @class = "form-control" } })
+
+            @Html.Label("Fotoğraf", htmlAttributes: new { @class = "control-label col-md-2" })
+            <input type="file" name="Image" />
+
+
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input id="Btn1" type="submit" value="Kaydet" class="btn btn-success" />
+            </div>
+        </div>
+
+        <script>
+            $('#Btn1').click(function () {
+                alert("Üye başarılı bir şekilde güncellendi")
+            });
+        </script>
+
+    </div>
+
+
+}
+
+<div>
+    @Html.ActionLink("Listeye Dön", "Index")
+</div>
+
